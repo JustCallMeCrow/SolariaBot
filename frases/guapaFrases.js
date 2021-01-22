@@ -1,0 +1,31 @@
+const FRASES_GUAPA = [
+    'Uys, tu también :heart:',
+    "Lindas palabras vienen de un ser tan horrendo.",
+    "¿En mi casa o en tu casa?",
+    "Estoy de servicio quizá más tarde",
+    "uwu",
+    "Sisoi gracias.",
+    "...",
+    "OwO",
+    "Un cumplido alegra durante un día, una crítica entristece una semana",
+    "Erm, no puedo hacerlo o te has equivocado, lo siento, le diré a Crow que me mejore",
+    "Erm",
+    "Uhhh",
+    "Mmmm",
+    "Buenos días a ti tambien, sexy",
+    "Este bot se encuentra sin cobertura, por favor, intentelo más tarde",
+    "*guiña el ojo*",
+    "*risillas*",
+    "*sonrisa seductora*",
+    "*tira 1d20 de persuación(seducción)",
+    "*What is love, baby don't hurt me, no more",
+    "https://tenor.com/view/bear-blow-a-kiss-love-hearts-kissing-gif-11674749",
+    "o////o",
+    "https://tenor.com/view/sex-girl-pussy-clit-fingering-gif-14026774",
+    "https://tenor.com/view/love-hi-handsome-hearts-cute-gif-17174917",
+    "https://tenor.com/view/kate-upton-hey-handsome-wink-sexy-playboy-gif-13342728",
+    "https://tenor.com/view/kiss-anime-cute-kawaii-gif-13843260",
+    "Denunciar o no denunciar, esa es la cuestión"
+];
+
+module.exports = [FRASES_GUAPA];
