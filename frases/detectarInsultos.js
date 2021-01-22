@@ -1,0 +1,28 @@
+const INSULTOS = [
+  "zorra",
+  " puta",
+  " furcia",
+  " gorda",
+  " fea",
+  " guarra",
+  " asquerosa",
+  " sucia",
+  " retrasada",
+  " tonta",
+  " mierda",
+  " inútil",
+  " inutil",
+  " putón",
+  " puton",
+  " zorrón",
+  " cabrona",
+  " muerta",
+  " estúpida",
+  " estupida",
+  " idiota",
+  " prostituta ",
+  " muerete",
+  " muérete",
+];
+
+module.exports = [INSULTOS];

@@ -41,7 +41,9 @@ client.on('message', message => {
 
     if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-    if (message.content.includes("fea") || message.content.includes("puta") || message.content.includes("zorra" || mesage.content.includes("gorda") || mesage.content.includes("muerete"))) {
+    let detectarInsultos = require('./frases/detectarInsultos.js');
+
+    if (detectarInsultos[0].some(v => message.content.includes(v))) {
         let frases = require('./frases/recibeInsultos.js');
         message.channel.send(frases[0][(parseInt(Math.random() * frases[0].length))]);
     } else {
