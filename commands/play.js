@@ -1,12 +1,14 @@
 const ytdl = require("ytdl-core");
 const yts = require("yt-search");
+const queueSave = require("./playListData.js");
 
 module.exports = {
     name: 'play',
     description: "Reproduce una canción",
     execute(message, args, queue) {
         executeMusic(message, args, queue);
-    }
+    },
+    play: play
 }
 
 async function executeMusic(message, args, queue) {
@@ -42,32 +44,37 @@ async function executeMusic(message, args, queue) {
         };
     }
 
-    if (!serverQueue) {
-        const queueContruct = {
+    let queueContruct = {
             textChannel: message.channel,
             voiceChannel: voiceChannel,
             connection: null,
             songs: [],
             volume: 5,
-            playing: true
+            playing: true,
+            loop: false
         };
 
         queue.set(message.guild.id, queueContruct);
 
         queueContruct.songs.push(song);
         queueContruct.connection = connection;
-
+    if (!serverQueue) {
+       
         try {
             var connection = await voiceChannel.join();
             queueContruct.connection = connection;
-            play(message.guild, queueContruct.songs[0], queueContruct, queue);
+            play(message.guild, queueContruct.songs[0], queueContruct, queue, serverQueue);
+            queueSave.setPlayListData(message.guild, queueContruct.songs[0], queueContruct, queue);    
         } catch (err) {
             console.log(err);
             queue.delete(message.guild.id);
             return message.channel.send(err);
         }
     } else {
+      var connection = await voiceChannel.join();
+        queueContruct.connection = connection;
         serverQueue.songs.push(song);
+        queueSave.setPlayListData(message.guild, serverQueue, queueContruct, queue);      
         return message.channel.send(`${song.title} Otra canción para la cola!`);
     }
 }
@@ -78,7 +85,6 @@ function play(guild, song, queueContruct, queue) {
         queue.delete(guild.id);
         return;
     }
-
     const dispatcher = queueContruct.connection
         .play(ytdl(song.url))
         .on("finish", () => {

@@ -47,7 +47,6 @@ client.on('message', message => {
         let frases = require('./frases/recibeInsultos.js');
         message.channel.send(frases[0][(parseInt(Math.random() * frases[0].length))]);
     } else {
-
         const args = message.content.slice(prefix.length).split(/ +/);
         const command = args.shift().toLowerCase();
         if (command === 'hola') {
@@ -92,6 +91,8 @@ client.on('message', message => {
             client.commands.get('stop').execute(message, args, queue);
         } else if (command == 'guapa') {
             client.commands.get('guapa').execute(message, args);
+        }else if (command == 'loop') {
+            client.commands.get('loop').execute(message, args, queue);
         } else {
             message.channel.send("Erm, no puedo hacerlo o te has equivocado, lo siento, le diré a Crow que me mejore");
         }

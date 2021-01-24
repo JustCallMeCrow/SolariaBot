@@ -9,7 +9,15 @@ module.exports = {
             return message.channel.send(
                 "No puedes parar la música si no la estás escuchando!"
             );
-        serverQueue.songs = [];
-        serverQueue.connection.dispatcher.end();
+
+        if(queue) {
+          serverQueue.songs = [];
+          serverQueue.connection.dispatcher.end();
+        } else {
+           return message.channel.send(
+                "No hay canciones que parar, a mi no me engañas"
+            );
+        }
+        
     }
 }

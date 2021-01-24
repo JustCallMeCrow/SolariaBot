@@ -1,6 +1,6 @@
 {
   "name": "discordbots",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "description": "",
   "main": "main.js",
   "scripts": {
@@ -13,8 +13,9 @@
     "discord.js": "^12.5.1",
     "ffmpeg-static": "^4.2.7",
     "node-opus": "^0.3.3",
+    "play": "^0.5.0",
     "yt-search": "^2.5.1",
     "ytdl": "^1.4.1",
-    "ytdl-core": "^4.2.1"
+    "ytdl-core": "^4.4.4"
   }
 }
