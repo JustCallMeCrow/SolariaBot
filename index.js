@@ -2,7 +2,7 @@ const Discord = require('discord.js');
 
 const client = new Discord.Client();
 
-const prefix = "Solaria ";
+const prefix = "solaria ";
 
 const fs = require('fs');
 
@@ -37,9 +37,11 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', message => {
-    if (message.content == "Solaria") message.channel.send("Dime bebe :3, esperando ordenes");
+    if(message.startsWith("-p") || message.startsWith("-p")) message.channel.send("Así que me estáis engañando usando tro bot, ya veo como son las cosas")
+    if (message.content == "Solaria" || message.content == "solaria") message.channel.send("Dime bebe :3, esperando ordenes");
 
-    if (!message.content.startsWith(prefix) || message.author.bot) return;
+    if (!message.content.toLowerCase().startsWith(prefix) ||  message.author.bot) return;
+
 
     let detectarInsultos = require('./frases/detectarInsultos.js');
 

@@ -20,8 +20,9 @@ async function executeLoop(message, args, queue) {
     if(playListData[2].loop === true) {
       play(playListData[0], playListData[1],playListData[2],playListData[3]);
       message.channel.send("Bucle activado");
-    } else {  
+    } else {
       playListData[2].songs.shift();
+      playList.setPlayListData(playListData[0], playListData[1],playListData[2],playListData[3],)  
       message.channel.send("Bucle desactivado");
     }
   } else {
