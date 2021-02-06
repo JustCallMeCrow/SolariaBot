@@ -37,7 +37,7 @@ client.on('guildMemberAdd', member => {
 });
 
 client.on('message', message => {
-    if(message.content.startsWith("-p ") || message.content.startsWith("-play ")) message.channel.send("Así que me estáis engañando usando tro bot, ya veo como son las cosas");
+    if(message.content.startsWith("-p ") || message.content.startsWith("-play ")) message.channel.send("Así que me estáis engañando usando otro bot, ya veo como son las cosas");
     if (message.content == "Solaria" || message.content == "solaria") message.channel.send("Dime bebe :3, esperando ordenes");
 
     if (!message.content.toLowerCase().startsWith(prefix) ||  message.author.bot) return;
